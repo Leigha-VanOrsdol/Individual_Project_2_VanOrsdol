@@ -19,9 +19,12 @@ class Rotating_CC:
             if ch in self.ALPHA_upper:
                 i = self.ALPHA_upper.index(ch)
                 ch = self.ALPHA_upper[(i + new_shift)%26]
-            if ch in self.ALPHA_lower:
+            elif ch in self.ALPHA_lower:
                 i = self.ALPHA_lower.index(ch)
                 ch = self.ALPHA_lower[(i + new_shift)%26]
+            else:
+                new_msg += ch
+                continue
             new_shift+=shift
             new_msg += ch
                 
