@@ -25,7 +25,14 @@ class Test_RCC(unittest.TestCase):
     def test_encrypt_5(self):
         new_msg = self.test_rcc.RCC_encrypt("Hello World!",3)
         self.assertEqual(new_msg, "Kkuxd Ojpmh!")
-
+    
+    def test_encrypt_6(self):
+        new_msg = self.test_rcc.RCC_encrypt("Hello\n",2)
+        self.assertEqual(new_msg, "Jirty\n")
+        
+    def test_encrypt_7(self):
+        new_msg = self.test_rcc.RCC_encrypt(f"Hello{2+2}",2)
+        self.assertEqual(new_msg, "Jirty4")
         
 if __name__ == '__main__':
     unittest.main()
